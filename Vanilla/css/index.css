@@ -1,0 +1,66 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+#train-container{
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background:rgba(56, 54, 54, 0.253);
+}
+/*Train Schedule Display*/
+#train-schedule-container{
+    
+}
+#train-schedule-table{
+    background:#063970;
+    color:white;
+}
+#train-schedule-table caption{
+    background:orange;
+    font-size:22px;
+    color:black;
+   font-weight: bold;
+}
+#no-train-message{
+    color:red;
+    text-align:center;
+    padding:20px 0px;
+}
+.data-row{
+    background:#1f4d7e;
+}
+/*Train Schedile Form*/
+#train-form{
+    background:#063970;
+}
+
+#train-form-header h1{
+    background:orange;
+    color:black;
+}
+input{
+    background:#1f4d7e;
+    color:white;
+    border:none;
+    font-size:20px;
+    padding:5px 5px;
+    margin:0px 5px;
+}
+label{
+    color:white;
+    font-size:20px;
+    padding:5px 5px;
+}
+.form-input-container{
+    display:flex;
+    flex-direction: column;
+}
+#train-form-button{
+    font-size:22px;
+    padding:5px 10px;
+    margin:15px 5px;
+}
+/*Media Queries*/

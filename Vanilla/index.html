@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="train-container">
+        <div id="train-schedule-container">
+            <table id="train-schedule-table">
+                <caption>Train Schedule</caption>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency in Minutes</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+                <tr class="data-row">
+                    <td colspan="100%" id="no-train-message">No Trains Added Yet</td>
+                </tr>
+            </table>
+        </div>
+        <div id="train-form-container">
+            <form action="" id="train-form">
+                <div id="train-form-header"><h1>Add New Train</h1></div>
+                <div class="form-input-container">
+                    <label for="train-name">Name of Train</label>
+                    <input type="text" name="train-name" required>
+                </div>
+                <div class="form-input-container">
+                    <label for="train-dest">Train Destination</label>
+                    <input type="text" name="train-dest" required>
+                </div>
+                <div class="form-input-container">
+                    <label for="first-train">Time of First Train</label>
+                    <input type="time" name="first-train" required>
+                </div>
+                <div class="form-input-container">
+                    <label for="train-name">Frequency (Minutes)</label>
+                    <input type="text" name="train-name" required>
+                </div>
+                <button id="train-form-button">Add Train</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
