@@ -9,14 +9,17 @@
     flex-direction: column;
     justify-content: space-around;
     background:rgba(56, 54, 54, 0.253);
+    overflow: scroll;
 }
 /*Train Schedule Display*/
 #train-schedule-container{
-    
+    width:100vw;
+   
 }
 #train-schedule-table{
     background:#063970;
     color:white;
+    width:100%;
 }
 #train-schedule-table caption{
     background:orange;
@@ -40,6 +43,7 @@
 #train-form-header h1{
     background:orange;
     color:black;
+    padding:0px 5px;
 }
 input{
     background:#1f4d7e;
@@ -62,5 +66,95 @@ label{
     font-size:22px;
     padding:5px 10px;
     margin:15px 5px;
+    background:orange;
+    border:none;
+    border-radius: 5px;
 }
-/*Media Queries*/
+
+/*Media Queries
+-Mobile First Design
+*/
+
+/*IPAD*/
+@media screen and (min-width:768px){
+    #train-schedule-table caption{
+        font-size:25px;
+    }
+    #no-train-message{
+        padding:25px 0px;
+        font-size:30px;
+    }
+    th{
+        font-size:18px;
+    }
+    input{
+        font-size:25px;
+        padding:10px 10px;
+        margin:0px 30px;
+    }
+    label{
+        font-size:18px;
+        padding:5px 30px;
+    }
+    #train-form-button{
+        font-size:25px;
+        padding:5px 10px;
+        margin:15px 30px;
+    }
+    #train-form-header h1{
+        font-size:30px;
+        padding:0px 30px;
+    }
+}
+
+/*IPAD PRO*/
+@media screen and (min-width:1024px){
+    #train-schedule-table caption{
+        font-size:30px;
+    }
+    #no-train-message{
+        padding:35px 0px;
+        font-size:35px;
+    }
+    th{
+        font-size:20px;
+    }
+    input{
+        font-size:20px;
+        padding:10px 10px;
+        margin:0px 30px;
+    }
+    label{
+        font-size:20px;
+        padding:5px 30px;
+    }
+    #train-form-button{
+        padding:7px 12px; 
+    }
+}
+
+/*DESKTOP*/
+@media screen and (min-width:1100px){
+    #train-container{
+        height:100vh;
+        display:flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        background:rgba(56, 54, 54, 0.253);
+        align-items: center;
+        
+    }
+    #train-schedule-container{
+        width:70vw;
+        
+    }
+    #train-schedule-table{
+        background:#063970;
+        color:white;
+        width:100%;
+        height:600px;
+    }
+    #train-form{
+      height:500px;
+    }
+}
