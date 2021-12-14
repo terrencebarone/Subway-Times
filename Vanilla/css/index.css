@@ -34,12 +34,35 @@
 }
 .data-row{
     background:#1f4d7e;
+    height:30px;
+    text-align: center;
+   
 }
+tr:hover{
+    background:red;
+}
+.table-data{
+  height:10px;
+}
+
 /*Train Schedile Form*/
 #train-form{
     background:#063970;
 }
 
+#time-error-message{
+    color:red;
+    font-size:18px;
+    padding:0px 5px;
+}
+#freq-error-message{
+    color:red;
+    font-size:18px;
+    padding:0px 5px;
+}
+.hide-message{
+    display:none;
+}
 #train-form-header h1{
     background:orange;
     color:black;
@@ -57,6 +80,10 @@ label{
     color:white;
     font-size:20px;
     padding:5px 5px;
+}
+select{
+    font-size:20px;
+    padding:5px;
 }
 .form-input-container{
     display:flex;
@@ -152,7 +179,7 @@ label{
         background:#063970;
         color:white;
         width:100%;
-        height:600px;
+       
     }
     #train-form{
       height:500px;

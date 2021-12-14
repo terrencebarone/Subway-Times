@@ -19,7 +19,7 @@
                     <th>Next Arrival</th>
                     <th>Minutes Away</th>
                 </tr>
-                <tr class="data-row">
+                <tr id="no-train-message" class="data-row">
                     <td colspan="100%" id="no-train-message">No Trains Added Yet</td>
                 </tr>
             </table>
@@ -36,17 +36,21 @@
                     <input type="text" name="train-dest" required>
                 </div>
                 <div class="form-input-container">
-                    <label for="first-train">Time of First Train</label>
-                    <input type="time" name="first-train" required>
+                    <label for="first-train">Time of First Train (hh:min) </label>
+                    <div id="time-input-container">
+                        <p id="time-error-message" class="hide-message">Please Follow Time Format</p>
+                        <input type="text" name="first-train" required>
+                    </div>
                 </div>
                 <div class="form-input-container">
                     <label for="train-name">Frequency (Minutes)</label>
-                    <input type="text" name="train-name" required>
+                    <p id="freq-error-message" class="hide-message">Frequency is always less than 300 minutes</p>
+                    <input type="number" name="train-name" required>
                 </div>
-                <button id="train-form-button">Add Train</button>
+                <button type="submit" id="train-form-button">Add Train</button>
             </form>
         </div>
     </div>
-    
+    <script src="js/index.js"></script>
 </body>
 </html>
