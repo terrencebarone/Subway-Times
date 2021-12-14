@@ -24,12 +24,8 @@ function nextArrival(firstTrain,freq){
             return [nextArrival,`${60-currentMin} minutes`];
         }
         else{
-        console.log(firstTrainHour + " " +firstTrainMin);
-        console.log(currentHour+ " " +currentMin);
         let nextArrival = `${firstTrainHour}:${firstTrainMin}`;
         let minutesAway = `${firstTrainMin-currentMin} minutes`;
-        console.log(nextArrival);
-        console.log(minutesAway);
         return [nextArrival,minutesAway];
         }
 
@@ -65,23 +61,36 @@ function updateSchedule(localStorageData){
         <th>Frequency in Minutes</th>
         <th>Next Arrival</th>
         <th>Minutes Away</th>
+        <th></th>
     </tr>
    `;
     for(let i = 0 ; i<localStorageData.length; i++){
         
         let calcedData = nextArrival(localStorageData[i].firstTrain,localStorageData[i].freq);
         tableData = tableData + `
-        <tr class="data-row">
+        <tr class="data-row" value="${i}">
             <td class="table-data">${localStorageData[i].name}</td>
             <td class="table-data">${localStorageData[i].dest}</td>
             <td class="table-data">${localStorageData[i].freq}</td>
             <td class="table-data">${calcedData[0]}</td>
             <td class="table-data">${calcedData[1]}</td>
+            <td class="table-data"><button class="delete-button">X</button></td>
         </tr>
         `;
         
     }
     document.getElementById("train-schedule-table").innerHTML=tableData;
+    let deleteButton=document.getElementsByClassName("delete-button");
+    for(let i=0;i<deleteButton.length;i++){
+        deleteButton[i].addEventListener("click", ()=>{
+            let itemInLocal= deleteButton[i].parentElement.parentElement.getAttribute("value");
+            deleteButton[i].parentElement.parentElement.remove();
+            let localData=JSON.parse(localStorage.getItem("trainData"));
+            localData.splice(itemInLocal,1);
+            localStorage.setItem("trainData", JSON.stringify(localData));
+        });
+        
+    }
 }
 
 //LOCAL STORAGE TRAIN DATA 
